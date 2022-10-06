@@ -1,5 +1,5 @@
 # OTEZ
 
-Jakub Okuła
-Mateusz Nasiadka
-Adam Rozwadowski - kierownik grupy
+Jakub Okuła,
+Mateusz Nasiadka,
+Adam Rozwadowski (kierownik grupy)

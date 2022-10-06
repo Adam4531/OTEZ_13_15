@@ -2,4 +2,4 @@
 
 Jakub Okuła
 Mateusz Nasiadka
-Adam Rozwadowski
+Adam Rozwadowski - kierownik grupy

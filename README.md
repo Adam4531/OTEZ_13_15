@@ -1,6 +1,6 @@
 # OTEZ
 
-Inżynieria oprogramowania
+Inżynieria oprogramowania - Organizacja imprez
 
 Jakub Okuła,
 Mateusz Nasiadka,

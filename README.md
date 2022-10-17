@@ -1,6 +1,9 @@
 # OTEZ
 
-Inżynieria oprogramowania - Organizacja imprez
+Przedmiot: Inżynieria oprogramowania
+
+Temat projektu: Organizacja imprez
+
 
 Jakub Okuła,
 Mateusz Nasiadka,

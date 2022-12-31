@@ -107,6 +107,16 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>8.5.13</version>
+				<configuration>
+					<user>postgres</user>
+					<password>postgres</password>
+					<url>jdbc:postgresql://localhost:5432/eventmasters</url>
+				</configuration>
+			</plugin>
 <!--			<plugin>-->
 <!--				<groupId>org.asciidoctor</groupId>-->
 <!--				<artifactId>asciidoctor-maven-plugin</artifactId>-->

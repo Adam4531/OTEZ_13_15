@@ -1,7 +1,8 @@
-package pl.otez.client;
+package pl.otez.user.client;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.otez.user.client.validation.EmailValidator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -16,9 +17,9 @@ public class ClientEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-//    @Embedded
-//    private Email email;
-    private String email;
+    @Embedded
+    @Column(unique = true)
+    private EmailValidator email;
 
     private String firstName;
 
@@ -35,4 +36,8 @@ public class ClientEntity {
     private String NIP;
 
     private String nameOfCompany;
+
+    void changeEmail(String aEmail) {
+        this.email = new EmailValidator(aEmail);
+    }
 }

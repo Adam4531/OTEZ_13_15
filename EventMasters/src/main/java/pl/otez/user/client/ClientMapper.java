@@ -1,7 +1,7 @@
-package pl.otez.client;
+package pl.otez.user.client;
 
 import org.springframework.stereotype.Component;
-import pl.otez.client.dto.ClientRequestDto;
+import pl.otez.user.client.dto.ClientResponseDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 @Component
 public class ClientMapper {
 
-    public ClientRequestDto fromClientEntityToClientRequestDto(ClientEntity aClientEntity){
-        return ClientRequestDto.builder()
-                .email(aClientEntity.getEmail())
+    public ClientResponseDto fromClientEntityToClientResponseDto(ClientEntity aClientEntity){
+        return ClientResponseDto.builder()
+                .email(aClientEntity.getEmail().toString())
                 .firstName(aClientEntity.getFirstName())
                 .lastName(aClientEntity.getLastName())
                 .phoneNumber(aClientEntity.getPhoneNumber())
@@ -23,7 +23,8 @@ public class ClientMapper {
                 .build();
     }
 
-    public List<ClientRequestDto> fromClientEntityListToClientRequestDtoList(List<ClientEntity> aClientEntity){
-        return aClientEntity.stream().map(this::fromClientEntityToClientRequestDto).collect(Collectors.toList());
+    public List<ClientResponseDto> fromClientEntityListToClientResponseDtoList(List<ClientEntity> aClientEntity){
+        return aClientEntity.stream().map(this::fromClientEntityToClientResponseDto).collect(Collectors.toList());
     }
+
 }

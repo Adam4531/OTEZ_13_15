@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class ClientEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Embedded

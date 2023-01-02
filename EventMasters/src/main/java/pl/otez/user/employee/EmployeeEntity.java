@@ -12,6 +12,6 @@ import javax.persistence.*;
 public class EmployeeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 }

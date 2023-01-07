@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS public.Events (
 CREATE TABLE IF NOT EXISTS public.Tickets (
   ID BIGINT NOT NULL PRIMARY KEY,
   client_id BIGINT NOT NULL,
-  pricePerUnit DECIMAL(7,2) NOT NULL,
+  price_per_unit DECIMAL(7,2) NOT NULL,
   event_id BIGINT NOT NULL,
   CONSTRAINT client_id_fkey FOREIGN KEY (client_id) REFERENCES Clients (ID),
   CONSTRAINT event_id_fkey FOREIGN KEY (event_id) REFERENCES Events (ID));

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import pl.otez.ticket.validation.PricePerUnitValidator;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -23,7 +24,7 @@ public class TicketEntity {
 
     private Long event_id;
 
-    void changePricePerUnit(Long aPricePerUnit) {
+    void changePricePerUnit(BigDecimal aPricePerUnit) {
         this.price_per_unit = new PricePerUnitValidator(aPricePerUnit);
     }
 }

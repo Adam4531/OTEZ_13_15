@@ -5,6 +5,7 @@ import pl.otez.interfaces.Validator;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Embeddable
@@ -12,19 +13,19 @@ import java.util.Objects;
 public class PricePerUnitValidator implements Validator  {
 
     @Column(name="price_per_unit")
-    private Long pricePerUnit;
+    private BigDecimal pricePerUnit;
 
-    public PricePerUnitValidator(Long aPricePerUnit){
+    public PricePerUnitValidator(BigDecimal aPricePerUnit){
         if(Objects.isNull(aPricePerUnit)){
             throw new IllegalArgumentException("Price per unit can not be null!");
         }
-        if(0>=aPricePerUnit){
+        if(aPricePerUnit.compareTo(BigDecimal.ZERO) <= 0){
             throw new IllegalArgumentException("Price per unit can not be less than or equal to zero!");
         }
         this.pricePerUnit = aPricePerUnit;
     }
 
-    public Long getPricePerUnit() {
+    public BigDecimal getPricePerUnit() {
         return pricePerUnit;
     }
 

@@ -2,7 +2,9 @@ package pl.otez.ticket.dto;
 
 import lombok.Builder;
 
-public record TicketEditRequestDto(Long price_per_unit) {
+import java.math.BigDecimal;
+
+public record TicketEditRequestDto(BigDecimal price_per_unit) {
 
     @Builder
     public TicketEditRequestDto{

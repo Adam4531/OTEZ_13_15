@@ -5,6 +5,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import pl.otez.ticket.dto.TicketResponseDto;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -34,7 +35,7 @@ public class TicketService {
         return ticketMapper.fromTicketEntityToTicketResponseDto(ticket);
     }
 
-    public TicketResponseDto updateTicketPricePerUnit(Long id, long pricePerUnit){
+    public TicketResponseDto updateTicketPricePerUnit(Long id, BigDecimal pricePerUnit){
         TicketEntity ticket = getTicket(id);
         ticket.changePricePerUnit(pricePerUnit);
         ticketRepository.save(ticket);

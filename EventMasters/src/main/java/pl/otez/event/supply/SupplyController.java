@@ -1,0 +1,9 @@
+package pl.otez.event.supply;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/supplies")
+public class SupplyController {
+}

@@ -11,7 +11,8 @@ import { EventsComponent } from './events/events.component';
 import { OrganizeComponent } from './organize/organize.component';
 import { SellComponent } from './sell/sell.component';
 import { CompanyComponent } from './company/company.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventDetailComponent } from './events/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,14 @@ import { FormsModule } from '@angular/forms';
     EventsComponent,
     OrganizeComponent,
     SellComponent,
-    CompanyComponent
+    CompanyComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

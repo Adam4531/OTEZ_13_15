@@ -9,7 +9,7 @@ import { TechnicalFaultComponent } from './technical-fault/technical-fault.compo
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: 'events', pathMatch: 'full' },
   { path: 'report', component: TechnicalFaultComponent },
   { path: 'cart', component: CartComponent },
   { path: 'events', component: EventsComponent },

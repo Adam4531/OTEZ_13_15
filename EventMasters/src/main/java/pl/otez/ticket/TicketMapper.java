@@ -11,7 +11,7 @@ public class TicketMapper {
     public TicketResponseDto fromTicketEntityToTicketResponseDto(TicketEntity aTicketEntity){
         return TicketResponseDto.builder()
                 .client_id(aTicketEntity.getClient_id())
-                .price_per_unit(aTicketEntity.getPrice_per_unit().getPricePerUnit())
+                .price_per_unit(aTicketEntity.getPricePerUnit())
                 .event_id(aTicketEntity.getEvent_id())
                 .build();
     }

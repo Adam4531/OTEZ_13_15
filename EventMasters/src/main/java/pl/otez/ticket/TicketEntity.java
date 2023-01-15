@@ -17,14 +17,17 @@ public class TicketEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+//    @OneToMany(fetch = FetchType.LAZY)
+//    @JoinColumn(name = client)
     private Long client_id;
 
-    @Embedded
-    private PricePerUnitValidator price_per_unit;
+//    @Embedded
+    private BigDecimal pricePerUnit;
 
     private Long event_id;
 
     void changePricePerUnit(BigDecimal aPricePerUnit) {
-        this.price_per_unit = new PricePerUnitValidator(aPricePerUnit);
+//        this.pricePerUnit = new PricePerUnitValidator(aPricePerUnit);
+        this.pricePerUnit = aPricePerUnit;
     }
 }

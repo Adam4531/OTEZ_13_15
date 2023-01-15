@@ -8,11 +8,11 @@ import javax.persistence.Embeddable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Embeddable
 @NoArgsConstructor
+@Embeddable
 public class PricePerUnitValidator implements Validator  {
 
-    @Column(name="price_per_unit")
+    @Column
     private BigDecimal pricePerUnit;
 
     public PricePerUnitValidator(BigDecimal aPricePerUnit){
@@ -47,3 +47,4 @@ public class PricePerUnitValidator implements Validator  {
         return Objects.hash(pricePerUnit);
     }
 }
+

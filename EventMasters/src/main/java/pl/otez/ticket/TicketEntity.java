@@ -21,13 +21,13 @@ public class TicketEntity {
 //    @JoinColumn(name = client)
     private Long client_id;
 
-//    @Embedded
-    private BigDecimal pricePerUnit;
+    @Embedded
+    private PricePerUnitValidator pricePerUnit;
 
     private Long event_id;
 
     void changePricePerUnit(BigDecimal aPricePerUnit) {
-//        this.pricePerUnit = new PricePerUnitValidator(aPricePerUnit);
-        this.pricePerUnit = aPricePerUnit;
+        this.pricePerUnit = new PricePerUnitValidator(aPricePerUnit);
+//        this.pricePerUnit = aPricePerUnit;
     }
 }

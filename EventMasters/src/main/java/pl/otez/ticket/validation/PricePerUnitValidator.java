@@ -12,7 +12,7 @@ import java.util.Objects;
 @Embeddable
 public class PricePerUnitValidator implements Validator  {
 
-    @Column
+    @Column(name = "price_per_unit")
     private BigDecimal pricePerUnit;
 
     public PricePerUnitValidator(BigDecimal aPricePerUnit){

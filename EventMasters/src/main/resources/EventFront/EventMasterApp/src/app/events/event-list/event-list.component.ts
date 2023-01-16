@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Event } from '../event.model';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-event-list',
@@ -7,6 +9,14 @@ import { Event } from '../event.model';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent {
-  events: Event[] = [{name: "Opener1", description: 'Lorem ipsum'},{name: "Opener2", description: 'Lorem ipsum'},{name: "Opener3", description: 'Lorem ipsum'},{name: "Opener4", description: 'Lorem ipsum'},{name: "Opener5", description: 'Lorem ipsum'},{name: "Opener6", description: 'Lorem ipsum'}];
+  events: Event[]
+  constructor(private eventService: EventService,
+    private router: Router,
+    private route: ActivatedRoute) {
+}
+
+ngOnInit() {
+this.events = this.eventService.getEvents();
+}
 
 }

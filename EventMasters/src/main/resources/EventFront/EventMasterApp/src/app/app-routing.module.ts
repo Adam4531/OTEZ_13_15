@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { CompanyComponent } from './company/company.component';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
+import { EventStartComponent } from './events/event-start/event-start.component';
 import { EventsComponent } from './events/events.component';
 import { OrganizeComponent } from './organize/organize.component';
 import { SellComponent } from './sell/sell.component';
@@ -13,8 +14,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'events', pathMatch: 'full' },
   { path: 'report', component: TechnicalFaultComponent },
   { path: 'cart', component: CartComponent },
-  {path: 'events', component: EventsComponent},
-  {path: 'events/:id', component: EventDetailComponent},
+  {path: 'events', component: EventsComponent, children: [
+    {path: '', component: EventStartComponent},
+    {path: ':id', component: EventDetailComponent},
+  ]},
   { path: 'organize', component: OrganizeComponent },
   { path: 'sell', component: SellComponent },
   { path: 'company', component: CompanyComponent },

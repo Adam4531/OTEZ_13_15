@@ -1,0 +1,36 @@
+﻿@model DaneKsiazek.Models.Ksiazka
+
+<div>
+    <h4>Ksiazka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tytul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ileStron)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ileStron)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ksiazkaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -8,22 +8,34 @@ export class EventService {
   private events: Event[] = [
     new Event(
       "Opener1",
-      'Lorem ipsum'),
+      'Lorem ipsum',
+      1),
     new Event(
       "Opener2",
-      'Lorem ipsum'),
+      'Lorem ipsum',
+      1),
     new Event(
       "Opener3",
-      'Lorem ipsum'),
+      'Lorem ipsum',
+      2),
 
 
   ];
-
+  eventsbyUser: Event[]=[]
   getEvents() {
     return this.events.slice();
   }
 
   getEvent(index: number) {
     return this.events[index];
+  }
+  getEventbyUser(user: number) {
+    this.events.forEach((even) =>{
+      if(even.user == user){
+        this.eventsbyUser.push(even)
+      }
+    }
+    )
+    return this.eventsbyUser;
   }
 }

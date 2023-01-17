@@ -4,15 +4,23 @@
       <a routerLink="/" class="navbar-brand" style="color: black;">EventMaster</a>
     </div>
     <ul class ="nav navbar-nav navbar-right">
-      <li routerLinkActive="active" ><a routerLink="/cart" style="color: black;">Koszyk</a></li>
-      <li class ="dropdown" appDropdown>
-          <a href="#" class = "dropdown-toggle" role = "button" style="color: black;">Menu <span class = "caret"></span></a>
+      <li routerLinkActive="active" ><a routerLink="/cart" style="color: black;" *ngIf="isAuth">Koszyk</a></li>
+      <li class ="dropdown" appDropdown *ngIf="isAuth">
+          <a class = "dropdown-toggle" role = "button" style="color: black;">Menu <span class = "caret"></span></a>
           <ul class = "dropdown-menu">
-              <li><a href="#">Moje bilety</a></li>
-              <li><a href="#">Moje imprezy</a></li>
-              <li><a href="#">Wyloguj</a></li>
+              <li><a href="my_tickets">Moje bilety</a></li>
+              <li><a href="my_events">Moje imprezy</a></li>
+              <li><a (click)="onLogout()">Wyloguj</a></li>
+
           </ul>
-      </li>
+          <li class="dropdown" appDropdown *ngIf="!isAuth">
+            <a style="cursor: pointer;" class="dropdown-toggle" role="button">Auth<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li style="cursor: pointer;"><a routerLink="/auth" >Login</a></li>
+              <li style="cursor: pointer;"><a routerLink="/auth/register" >Register</a></li>
+            </ul>
+          </li>
+
   </ul>
 
   </div>

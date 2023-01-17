@@ -9,6 +9,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
   isAuth = true;
   ngOnInit(): void {
+
+  }
+  onLogout(){
+    this.isAuth=false;
   }
 
 }

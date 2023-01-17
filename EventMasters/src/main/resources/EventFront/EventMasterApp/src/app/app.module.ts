@@ -16,6 +16,11 @@ import { EventDetailComponent } from './events/event-detail/event-detail.compone
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventItemComponent } from './events/event-list/event-item/event-item.component';
 import { EventService } from './events/event.service';
+import { AuthComponent } from './auth/auth.component';
+import { MyEventsComponent } from './my-events/my-events.component';
+import { MyTicketsComponent } from './my-tickets/my-tickets.component';
+import { MyEventListComponent } from './my-events/my-event-list/my-event-list.component';
+import { MyEventDetailComponent } from './my-events/my-event-detail/my-event-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { EventService } from './events/event.service';
     CompanyComponent,
     EventDetailComponent,
     EventListComponent,
-    EventItemComponent
+    EventItemComponent,
+    AuthComponent,
+    MyEventsComponent,
+    MyTicketsComponent,
+    MyEventListComponent,
+    MyEventDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@ package pl.otez.ticket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import pl.otez.ticket.dto.TicketResponseDto;
+import pl.otez.ticket.dto.TicketDto;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,9 +20,9 @@ public class TicketService {
         ticketRepository = aTicketRepository;
     }
 
-    public List<TicketResponseDto> getAllTickets(){
+    public List<TicketDto> getAllTickets(){
         var clients = ticketRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
-        return ticketMapper.fromTicketEntityListToTicketResponseDto(clients);
+        return ticketMapper.fromTicketEntityListToTicketDto(clients);
     }
 
     public TicketEntity getTicket(Long id){
@@ -30,16 +30,16 @@ public class TicketService {
                 orElseThrow(() -> new NoSuchElementException("Ticket with id:" + id + " does not exist!"));
     }
 
-    public TicketResponseDto getTicketById(Long id){
+    public TicketDto getTicketById(Long id){
         TicketEntity ticket = getTicket(id);
-        return ticketMapper.fromTicketEntityToTicketResponseDto(ticket);
+        return ticketMapper.fromTicketEntityToTicketDto(ticket);
     }
 
-    public TicketResponseDto updateTicketPricePerUnit(Long id, BigDecimal pricePerUnit){
+    public TicketDto updateTicketPricePerUnit(Long id, BigDecimal pricePerUnit){
         TicketEntity ticket = getTicket(id);
         ticket.changePricePerUnit(pricePerUnit);
         ticketRepository.save(ticket);
-        return ticketMapper.fromTicketEntityToTicketResponseDto(ticket);
+        return ticketMapper.fromTicketEntityToTicketDto(ticket);
     }
 
     public String deleteTicketById(Long id){

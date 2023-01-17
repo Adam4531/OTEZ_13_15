@@ -3,10 +3,8 @@ package pl.otez.ticket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.otez.user.ErrorsListDto;
 
-import pl.otez.ticket.dto.TicketEditRequestDto;
-import pl.otez.ticket.dto.TicketResponseDto;
+import pl.otez.ticket.dto.TicketDto;
 
 
 import java.util.List;
@@ -24,13 +22,13 @@ public class TicketController {
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
-    public List<TicketResponseDto> getClients(){
+    public List<TicketDto> getClients(){
         return ticketService.getAllTickets();
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public TicketResponseDto getTicketById(@PathVariable Long id){
+    public TicketDto getTicketById(@PathVariable Long id){
         return ticketService.getTicketById(id);
     }
 

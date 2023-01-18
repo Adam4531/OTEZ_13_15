@@ -5,5 +5,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/employees")
-public class EmployeeController {
+public class EmployeeController { //TODO fill it without endpoints to login and register
 }

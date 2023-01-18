@@ -22,7 +22,7 @@ public class SessionFilter extends OncePerRequestFilter {
     private final CurrentUserService currentUserService;
 
     @Autowired
-    public SessionFilter(SessionRegistry aSessionRegistry, CurrentUserService aCurrentUserService) {
+    public SessionFilter(SessionRegistry aSessionRegistry, CurrentUserService aCurrentUserService) {//FIXME final
         sessionRegistry = aSessionRegistry;
         currentUserService = aCurrentUserService;
     }

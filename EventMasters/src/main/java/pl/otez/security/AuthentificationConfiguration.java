@@ -49,7 +49,16 @@ public class AuthentificationConfiguration extends WebSecurityConfigurerAdapter 
                 ).and();
 
         http.authorizeHttpRequests()
-                .antMatchers("/", "/**", "/employee/login", "/employee/**", "/client/login","/client/**");
+                .antMatchers("/", "/api/client/login", "/api/**", "/**", "/api/employee/login")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
+
+//        http.authorizeHttpRequests()
+//                .antMatchers("/api/client/login", "/api/**", "/**").hasAuthority("USER");
+//
+//        http.authorizeHttpRequests()
+//                .antMatchers("/api/employee/login").hasRole("ADMIN");
 
         http
                 .addFilterBefore(sessionFilter, UsernamePasswordAuthenticationFilter.class);

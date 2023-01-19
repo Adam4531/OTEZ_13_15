@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import pl.otez.SuperEntity;
+import pl.otez.user.employee.position.PositionEntity;
 import pl.otez.user.validation.EmailValidator;
 
 import javax.persistence.*;

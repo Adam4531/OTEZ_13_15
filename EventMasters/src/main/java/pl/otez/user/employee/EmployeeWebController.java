@@ -13,19 +13,19 @@ import pl.otez.user.employee.dto.EmployeeLoginResponseDto;
 import pl.otez.user.employee.dto.EmployeeRequestDto;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class EmployeeWebController {
 
     private final EmployeeLoginService employeeLoginService;
     private final EmployeeRegistrationService employeeRegistrationService;
 
-    @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/employee/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<EmployeeLoginResponseDto> login(@RequestBody EmployeeLoginDto employee){
         return ResponseEntity.ok(employeeLoginService.login(employee));
     }
 
-    @PostMapping("/registration")
+    @PostMapping("/employee/registration")
     public ErrorsListDto create(@RequestBody EmployeeRequestDto employee){
         return employeeRegistrationService.register(employee);
     }

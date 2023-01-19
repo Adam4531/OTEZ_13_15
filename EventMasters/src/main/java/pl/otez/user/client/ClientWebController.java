@@ -13,19 +13,19 @@ import pl.otez.user.client.dto.ClientLoginResponseDto;
 import pl.otez.user.client.dto.ClientRequestDto;
 
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class ClientWebController {
 
     private final ClientLoginService clientLoginService;
     private final ClientRegistrationService clientRegistrationService;
 
-    @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/client/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ClientLoginResponseDto> login(@RequestBody ClientLoginDto client){
         return ResponseEntity.ok(clientLoginService.login(client));
     }
 
-    @PostMapping("/registration")
+    @PostMapping("/client/registration")
     public ErrorsListDto create(@RequestBody ClientRequestDto client){
         return clientRegistrationService.register(client);
     }

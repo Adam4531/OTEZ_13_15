@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @RequiredArgsConstructor
 public class ClientRegistrationService implements UserValidator {
     private final ClientRepository clientRepository;
-    private final ClientMapper clientMapper;
+    private final ClientWebMapper clientWebMapper;
 
     public ErrorsListDto register(ClientRequestDto aClientRequestDto){
         ErrorsListDto errorsListDto = new ErrorsListDto(new ArrayList<>());
@@ -33,7 +33,7 @@ public class ClientRegistrationService implements UserValidator {
             errorsListDto.add("First name and second name must contains only letters!");
         }
         if(errorsListDto.isListOfErrorsEmpty()){
-            ClientEntity clientEntity = clientMapper.fromClientRequestDtoToClientEntity(aClientRequestDto);
+            ClientEntity clientEntity = clientWebMapper.fromClientRequestDtoToClientEntity(aClientRequestDto);
             clientRepository.save(clientEntity);
         }
         return errorsListDto;

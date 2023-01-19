@@ -1,4 +1,4 @@
-package pl.otez.user.employee;
+package pl.otez.user.employee.position;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

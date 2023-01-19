@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class EmployeeRegistrationService implements UserValidator {
 
     private final EmployeeRepository employeeRepository;
-    private final EmployeeMapper employeeMapper;
+    private final EmployeeWebMapper employeeWebMapper;
 
     ErrorsListDto register(EmployeeRequestDto aEmployee) {
         ErrorsListDto errorsListDto = new ErrorsListDto(new ArrayList<>());
@@ -34,7 +34,7 @@ public class EmployeeRegistrationService implements UserValidator {
             errorsListDto.add("First name and second name must contain only letters");
         }
         if(errorsListDto.isListOfErrorsEmpty()){
-            EmployeeEntity employeeEntity = employeeMapper.fromEmployeeRequestDtoToEmployeeEntity(aEmployee);
+            EmployeeEntity employeeEntity = employeeWebMapper.fromEmployeeRequestDtoToEmployeeEntity(aEmployee);
             employeeRepository.save(employeeEntity);
         }
         return errorsListDto;

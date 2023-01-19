@@ -28,7 +28,4 @@ public class ClientMapper {
         return aClientEntity.stream().map(this::fromClientEntityToClientResponseDto).collect(Collectors.toList());
     }
 
-    ClientEntity fromClientRequestDtoToClientEntity(ClientRequestDto aClientRequestDto) { //FIXME
-        return new ClientEntity();
-    }
 }

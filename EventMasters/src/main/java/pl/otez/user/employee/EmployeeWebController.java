@@ -25,6 +25,7 @@ public class EmployeeWebController {
         return ResponseEntity.ok(employeeLoginService.login(employee));
     }
 
+    @PostMapping("/registration")
     public ErrorsListDto create(@RequestBody EmployeeRequestDto employee){
         return employeeRegistrationService.register(employee);
     }

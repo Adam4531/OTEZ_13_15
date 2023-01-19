@@ -1,4 +1,4 @@
-package pl.otez.user.client.validation;
+package pl.otez.user.validation;
 
 import lombok.NoArgsConstructor;
 import pl.otez.interfaces.Validator;

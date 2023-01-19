@@ -1,6 +1,7 @@
 package pl.otez.user.client;
 
 import org.springframework.stereotype.Component;
+import pl.otez.user.client.dto.ClientRequestDto;
 import pl.otez.user.client.dto.ClientResponseDto;
 
 import java.util.List;
@@ -27,4 +28,7 @@ public class ClientMapper {
         return aClientEntity.stream().map(this::fromClientEntityToClientResponseDto).collect(Collectors.toList());
     }
 
+    ClientEntity fromClientRequestDtoToClientEntity(ClientRequestDto aClientRequestDto) { //FIXME
+        return new ClientEntity();
+    }
 }

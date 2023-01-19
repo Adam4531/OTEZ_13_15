@@ -6,6 +6,8 @@ import pl.otez.user.employee.dto.EmployeeRequestDto;
 @Component
 public class EmployeeMapper { //TODO fill EmployeeMapper with map methods
     EmployeeEntity fromEmployeeRequestDtoToEmployeeEntity(EmployeeRequestDto aEmployee) {
-        return new EmployeeEntity();
+        return EmployeeEntity.builder()
+                .
+                .build();
     }
 }

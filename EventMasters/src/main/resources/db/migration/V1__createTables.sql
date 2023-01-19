@@ -1,4 +1,4 @@
-CREATE TYPE public.event_status AS ENUM('CANCELED','IN_PROGRESS');
+CREATE TYPE public.event_status AS ENUM('CANCELED','IN_PROGRESS'); -- Reservation, Authentication
 CREATE TYPE public.technical_faults_status AS ENUM('REPORTED','IN_PROGRESS','SOLVED');
 CREATE TYPE public.events_has_clients_roles AS ENUM('Organizer', 'Ticket_Seller');
 

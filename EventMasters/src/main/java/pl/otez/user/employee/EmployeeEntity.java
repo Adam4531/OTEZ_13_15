@@ -1,7 +1,10 @@
 package pl.otez.user.employee;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.otez.SuperEntity;
+import pl.otez.user.validation.EmailValidator;
 
 import javax.persistence.*;
 
@@ -9,11 +12,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Table(name = "EMPLOYEES")
-public class EmployeeEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class EmployeeEntity extends SuperEntity {
 
     private String firstName;
 
@@ -23,7 +22,17 @@ public class EmployeeEntity {
     @JoinColumn(name = "position_id")
     private PositionEntity position;
 
-    private String email;
+    @Column(unique = true)
+    private EmailValidator email;
 
     private String password;
+
+    @Builder
+    public EmployeeEntity(String aFirstName, String aLastName, PositionEntity aPosition, EmailValidator aEmail, String aPassword) {
+        firstName = aFirstName;
+        lastName = aLastName;
+        position = aPosition;
+        email = aEmail;
+        password = aPassword;
+    }
 }

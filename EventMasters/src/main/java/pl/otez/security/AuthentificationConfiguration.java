@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 @EnableWebSecurity
-public class AuthentificationConfiguration extends WebSecurityConfigurerAdapter { //TODO find a replacement for deprycated class
+public class AuthentificationConfiguration extends WebSecurityConfigurerAdapter { //FIXME find a replacement for deprycated class
     private final CurrentUserService currentUserService;
     private final PasswordEncoder passwordEncoder;
     private final SessionFilter sessionFilter;
@@ -49,7 +49,7 @@ public class AuthentificationConfiguration extends WebSecurityConfigurerAdapter 
                 ).and();
 
         http.authorizeHttpRequests()
-                .antMatchers("/", "/**", "/api/login", "/api/**");
+                .antMatchers("/", "/**", "/employee/login", "/employee/**", "/client/login","/client/**");
 
         http
                 .addFilterBefore(sessionFilter, UsernamePasswordAuthenticationFilter.class);

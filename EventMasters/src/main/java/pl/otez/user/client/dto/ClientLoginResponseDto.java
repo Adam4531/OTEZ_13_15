@@ -1,7 +1,5 @@
-package pl.otez.user.employee.dto;
+package pl.otez.user.client.dto;
 
-
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,12 +10,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
-public class EmployeeLoginResponseDto implements Serializable {
+public class ClientLoginResponseDto implements Serializable {
 
     private String sessionId;
     private ErrorsListDto errorsListDto;
 
-    public EmployeeLoginResponseDto(ErrorsListDto aErrorsListDto) {
+    public ClientLoginResponseDto(ErrorsListDto aErrorsListDto) {
         errorsListDto = aErrorsListDto;
     }
 

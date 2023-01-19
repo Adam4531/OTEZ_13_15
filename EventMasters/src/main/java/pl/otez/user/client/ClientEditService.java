@@ -2,10 +2,6 @@ package pl.otez.user.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.otez.user.ErrorsListDto;
-import pl.otez.user.client.dto.ClientEditRequestDto;
-import pl.otez.user.client.dto.ClientResponseDto;
-import pl.otez.user.client.validation.EmailValidator;
 
 @Service
 public class ClientEditService {

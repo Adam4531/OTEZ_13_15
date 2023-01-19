@@ -19,7 +19,7 @@ public class EmployeeRegistrationService implements UserValidator {
         ErrorsListDto errorsListDto = new ErrorsListDto(new ArrayList<>());
 
         if(!emailContainsAtSign(aEmployee.email())){
-            errorsListDto.add("Eamil must contain an '@' sign!");
+            errorsListDto.add("Email must contain an '@' sign!");
         }
         if(!isEmailUnique(aEmployee.email())){
             errorsListDto.add("Employee with this email does already exist!");

@@ -1,0 +1,42 @@
+﻿@model DaneKsiazek.Models.Ksiazka
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ksiazka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.autor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tytul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ileStron)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ileStron)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

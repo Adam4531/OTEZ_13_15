@@ -13,11 +13,11 @@ export class EventService {
     new Event(
       "Opener2",
       'Lorem ipsum',
-      1),
+      2),
     new Event(
       "Opener3",
       'Lorem ipsum',
-      2),
+      1),
 
 
   ];

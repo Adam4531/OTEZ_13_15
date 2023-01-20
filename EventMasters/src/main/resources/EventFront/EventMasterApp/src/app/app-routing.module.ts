@@ -8,6 +8,7 @@ import { EventStartComponent } from './events/event-start/event-start.component'
 import { EventsComponent } from './events/events.component';
 import { MyEventDetailComponent } from './my-events/my-event-detail/my-event-detail.component';
 import { MyEventsComponent } from './my-events/my-events.component';
+import { MyTicketDetaiComponent } from './my-tickets/my-ticket-detai/my-ticket-detai.component';
 import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 import { OrganizeComponent } from './organize/organize.component';
 import { SellComponent } from './sell/sell.component';
@@ -25,7 +26,10 @@ const routes: Routes = [
   { path: 'organize', component: OrganizeComponent },
   { path: 'sell', component: SellComponent },
   { path: 'company', component: CompanyComponent },
-  { path: 'my_tickets', component: MyTicketsComponent },
+  { path: 'my_tickets', component: MyTicketsComponent, children:[
+    {path: '', component: EventStartComponent},
+    {path: ':id', component: MyTicketDetaiComponent},
+  ] },
   { path: 'my_events', component: MyEventsComponent, children:[
     {path: '', component: EventStartComponent},
     {path: ':id', component: MyEventDetailComponent},

@@ -15,12 +15,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventItemComponent } from './events/event-list/event-item/event-item.component';
-import { EventService } from './events/event.service';
 import { AuthComponent } from './auth/auth.component';
 import { MyEventsComponent } from './my-events/my-events.component';
 import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 import { MyEventListComponent } from './my-events/my-event-list/my-event-list.component';
 import { MyEventDetailComponent } from './my-events/my-event-detail/my-event-detail.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { CartListComponent } from './cart/cart-list/cart-list.component';
+import { CartItemComponent } from './cart/cart-list/cart-item/cart-item.component';
+import { CartPriceComponent } from './cart/cart-price/cart-price.component';
+import { MyTicketsListComponent } from './my-tickets/my-tickets-list/my-tickets-list.component';
+import { MyTicketItemComponent } from './my-tickets/my-tickets-list/my-ticket-item/my-ticket-item.component';
+import { TicketService } from './cart/ticket.service';
+import { MyTicketDetaiComponent } from './my-tickets/my-ticket-detai/my-ticket-detai.component';
+import { EventService } from './shared/event.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +49,13 @@ import { MyEventDetailComponent } from './my-events/my-event-detail/my-event-det
     MyTicketsComponent,
     MyEventListComponent,
     MyEventDetailComponent,
+    PaymentsComponent,
+    CartListComponent,
+    CartItemComponent,
+    CartPriceComponent,
+    MyTicketsListComponent,
+    MyTicketItemComponent,
+    MyTicketDetaiComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +63,7 @@ import { MyEventDetailComponent } from './my-events/my-event-detail/my-event-det
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [EventService],
+  providers: [EventService, TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

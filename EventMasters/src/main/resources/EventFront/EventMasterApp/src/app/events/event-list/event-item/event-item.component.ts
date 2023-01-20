@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Event } from '../../event.model';
+import { Event } from '../../../shared/event.model';
 
 @Component({
   selector: 'app-event-item',

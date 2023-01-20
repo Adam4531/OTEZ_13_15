@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Event } from 'src/app/events/event.model';
-import { EventService } from 'src/app/events/event.service';
+import { Event } from 'src/app/shared/event.model';
+import { EventService } from 'src/app/shared/event.service';
 
 @Component({
   selector: 'app-my-event-list',

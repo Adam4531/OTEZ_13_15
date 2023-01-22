@@ -11,14 +11,14 @@ public class EventMapper {
     EventDto fromEventEntityToEventDto(EventEntity aEventEntity) {
         return EventDto.builder()
                 .id(aEventEntity.getId())
-                .typeOfEventEntity(aEventEntity.getTypeOfEvent())
+                .typeOfEventEntityId(aEventEntity.getTypeOfEvent().getId())
                 .price(aEventEntity.getPrice())
-                .payment(aEventEntity.getPayment())
-                .headEmployee(aEventEntity.getHeadEmployee())
+                .paymentId(aEventEntity.getPayment().getId())
+                .headEmployeeId(aEventEntity.getHeadEmployee().getId())
                 .dateStart(aEventEntity.getDateStart())
                 .dateEnd(aEventEntity.getDateEnd())
                 .status(aEventEntity.getStatus())
-                .client(aEventEntity.getClient())
+                .clientId(aEventEntity.getClient().getId())
                 .build();
     }
 

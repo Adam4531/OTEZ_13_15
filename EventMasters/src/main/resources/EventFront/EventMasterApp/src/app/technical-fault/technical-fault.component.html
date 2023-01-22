@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div
+         id="user-data"
+         ngModelGroup="type_fault"
+         #userData="ngModelGroup">
+          <div class="form-group">
+            <label for="username">Typ usterki</label>
+            <input
+              type="text"
+              id="type_fault"
+              class="form-control"
+              ngModel
+              name="type_fault"
+              required>
+          </div>
+        </div>
+        <p *ngIf="!userData.valid && userData.touched">Form is invalid</p>
+        <div class="form-group">
+          <label for="chooseEvent">Wybierz imprezę z listy</label>
+          <select
+            id="chooseEvent"
+            class="form-control"
+            [ngModel]="chooseEvent"
+            name="chooseEvent">
+            <option *ngFor="let event of events" value="{{event}}">{{event}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="desc_fault">Opis usterki</label>
+          <textarea
+            name="desc_fault"
+            rows="3"
+            [(ngModel)]="desc_fault"
+            class="form-control"></textarea>
+        </div>
+
+        <button
+        class="btn btn-primary"
+         type="submit"
+         [disabled]="!f.valid">Zgłoś</button>
+      </form>
+    </div>
+  </div>
+</div>

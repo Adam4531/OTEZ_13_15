@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="form-group">
+            <label for="type_event">Rodzaj imprezy</label><br>
+            <select
+            id="type_event"
+            name="type_event"
+            formControlName="type_event">
+            <option   class="form-control" value="masowa" >Masowa</option>
+            <option   class="form-control" value="prywatna" >Prywatna</option>
+          </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ticket_count">Podaj liczbę dostęnych biletów</label><br>
+          <input
+          type="text"
+          id="ticket_count"
+          class="form-control"
+          class="form-control" formControlName="ticket_count"
+          name="ticket_count"
+          required>
+        </div>
+        <div class="form-group">
+          <label for="additional">Dodatkowe usługi</label><br>
+          <dl *ngFor="let w4 of company; ; let i = index">
+            <input type="checkbox" formArrayName="additional" name="{{w4}}" value="{{w4}}" (change)="onCheckboxChange($event)">
+          <label for="{{w4}}">{{w4}}</label>
+          </dl>
+        </div>
+
+        <button
+        class="btn btn-primary"
+         type="submit"
+         [disabled]="!signForm.valid">Zgłoś</button>
+      </form>
+    </div>
+  </div>
+</div>

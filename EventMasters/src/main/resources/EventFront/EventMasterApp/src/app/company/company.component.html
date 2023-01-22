@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+        <div>
+          <div class="form-group">
+            <label for="NIP">NIP firmy</label><br>
+            <input
+            type="text"
+            id="NIP"
+            class="form-control" formControlName="NIP"
+            name="NIP"
+            required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Imię i nazwisko przedstawiciela</label><br>
+          <input
+          type="text"
+          id="name"
+          class="form-control" formControlName="name"
+          name="name"
+          required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label><br>
+          <input
+          type="text"
+          id="email"
+          class="form-control" formControlName="email"
+          name="email"
+          required
+          email>
+        </div>
+
+        <div class="form-group">
+          <label for="company_name">Nazwa firmy</label><br>
+          <input
+          type="text"
+          id="company_name"
+          class="form-control" formControlName="company_name"
+          name="company_name"
+          required>
+        </div>
+
+        <div class="form-group">
+          <label for="services">Pełnione usługi</label><br>
+          <input
+          type="text"
+          id="services"
+          class="form-control" formControlName="services"
+          name="services"
+          required>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Pełnione usługi</label><br>
+          <textarea
+          type="text"
+          id="comments"
+          class="form-control" formControlName="comments"
+          name="comments"></textarea>
+        </div>
+
+
+        <button
+        class="btn btn-primary"
+         type="submit"
+         [disabled]="!signForm.valid">Zatwierdź</button>
+      </form>
+    </div>
+  </div>
+</div>

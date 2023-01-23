@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, tap } from 'rxjs';
 import { EventDto } from './event';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class EventsService {
@@ -14,21 +14,14 @@ export class EventsService {
 
 
 
-  public fetchEvents(): Observable<EventDto[]> {
-    return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/}`).pipe(
-      tap(events => {
-        this.setEvents(events);
-      })
-    )
+  public fetchEvents(): void {
+    this.http.get<EventDto[]>(`${this.apiServerUrl}/events/`).subscribe((response: any) => {
+      this.events = response;})
   }
 
-  setEvents(events: EventDto[]) {
-    this.events = events;
-    console.log('dziala')
-    return this.events
-  }
 
   public getAll() {
+    console.log('dziala')
     return this.events.slice();
     // return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/}`)
   }

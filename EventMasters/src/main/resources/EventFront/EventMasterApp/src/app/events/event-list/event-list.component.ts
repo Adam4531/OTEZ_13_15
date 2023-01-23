@@ -16,9 +16,18 @@ export class EventListComponent {
     private route: ActivatedRoute) {
 }
 
+
+
 ngOnInit() {
+  // this.getReservations()
   this.eventService.fetchEvents();
   this.events = this.eventService.getAll();
 }
+// public getReservations(): void {
+//   this.eventService.fetchEvents().subscribe((response: any) => {
+//     this.events = response;
+
+//   });
+// }
 
 }

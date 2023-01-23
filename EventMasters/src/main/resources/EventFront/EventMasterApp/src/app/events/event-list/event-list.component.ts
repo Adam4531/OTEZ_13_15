@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EventService } from 'src/app/shared/event.service';
+import { ReservationsService } from '../EventsService';
 import { Event } from '../../shared/event.model';
+import { EventDto } from '../event';
 
 @Component({
   selector: 'app-event-list',
@@ -9,14 +10,15 @@ import { Event } from '../../shared/event.model';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent {
-  events: Event[]
-  constructor(private eventService: EventService,
+  events: EventDto[]
+  constructor(private eventService: ReservationsService,
     private router: Router,
     private route: ActivatedRoute) {
 }
 
 ngOnInit() {
-this.events = this.eventService.getEvents();
+this.eventService.fetchEvents();
+this.events = this.eventService.getAll();
 }
 
 }

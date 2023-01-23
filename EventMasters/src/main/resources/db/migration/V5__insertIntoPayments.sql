@@ -1,0 +1,9 @@
+insert into public.Payments (id, price, client_id, date_of_payment) values (1,15000.25, 1, '2022-12-15');
+insert into public.Payments (id, price, client_id, date_of_payment) values (2,55000.00, 2, '2023-01-15');
+insert into public.Payments (id, price, client_id, date_of_payment) values (3,99999.99, 3, '2022-05-25');
+insert into public.Payments (id, price, client_id, date_of_payment) values (4,10000.50, 4, '2022-06-13');
+insert into public.Payments (id, price, client_id, date_of_payment) values (5,1000.00, 5, '2022-03-01');
+insert into public.Payments (id, price, client_id, date_of_payment) values (6,40000.75, 6, '2022-08-28');
+insert into public.Payments (id, price, client_id, date_of_payment) values (7,37999.99, 7, '2022-01-14');
+insert into public.Payments (id, price, client_id, date_of_payment) values (8,15999.99, 8, '2022-12-29');
+insert into public.Payments (id, price, client_id, date_of_payment) values (9,98010.43, 10, '2022-04-18');

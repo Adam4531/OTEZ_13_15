@@ -1,4 +1,4 @@
-export interface EventDto {
+export class EventDto {
     id: number;
     typeOfEventEntityId: number;
     price: number;

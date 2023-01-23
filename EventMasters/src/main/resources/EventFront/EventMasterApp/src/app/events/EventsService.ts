@@ -1,22 +1,18 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { EventDto } from './event';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ReservationsService {
+@Injectable()
+export class EventsService {
   private events: EventDto[] = [];
   private apiServerUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {
   }
 
-  setEvents(events: EventDto[]) {
-    this.events = events;
-  }
+
 
   public fetchEvents(): Observable<EventDto[]> {
     return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/}`).pipe(
@@ -24,11 +20,17 @@ export class ReservationsService {
         this.setEvents(events);
       })
     )
+  }
 
+  setEvents(events: EventDto[]) {
+    this.events = events;
+    console.log('dziala')
+    return this.events
   }
 
   public getAll() {
     return this.events.slice();
+    // return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/}`)
   }
 
   getEvent(index: number) {

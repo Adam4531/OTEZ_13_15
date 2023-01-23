@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ReservationsService } from '../EventsService';
-import { Event } from '../../shared/event.model';
+import { EventsService } from '../EventsService';
 import { EventDto } from '../event';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-event-list',
@@ -10,15 +10,15 @@ import { EventDto } from '../event';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent {
-  events: EventDto[]
-  constructor(private eventService: ReservationsService,
+  public events: EventDto[] = [];
+  constructor(private eventService: EventsService,
     private router: Router,
     private route: ActivatedRoute) {
 }
 
 ngOnInit() {
-this.eventService.fetchEvents();
-this.events = this.eventService.getAll();
+  this.eventService.fetchEvents();
+  this.events = this.eventService.getAll();
 }
 
 }

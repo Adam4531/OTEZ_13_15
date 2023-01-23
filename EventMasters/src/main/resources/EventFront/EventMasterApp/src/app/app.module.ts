@@ -29,6 +29,8 @@ import { MyTicketItemComponent } from './my-tickets/my-tickets-list/my-ticket-it
 import { TicketService } from './cart/ticket.service';
 import { MyTicketDetaiComponent } from './my-tickets/my-ticket-detai/my-ticket-detai.component';
 import { EventService } from './shared/event.service';
+import { HttpClientModule } from '@angular/common/http';
+import { EventsService } from './events/EventsService';
 
 @NgModule({
   declarations: [
@@ -62,8 +64,9 @@ import { EventService } from './shared/event.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [EventService, TicketService],
+  providers: [EventsService, TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

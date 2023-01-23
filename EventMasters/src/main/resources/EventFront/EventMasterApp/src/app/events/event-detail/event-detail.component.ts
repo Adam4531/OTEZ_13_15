@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import {  ReservationsService } from '../EventsService';
+import {  EventsService } from '../EventsService';
 import { EventDto } from '../event';
 
 @Component({
@@ -11,7 +11,7 @@ import { EventDto } from '../event';
 export class EventDetailComponent implements OnInit{
  event: EventDto;
  id: number
- constructor(private eventService:  ReservationsService,private route: ActivatedRoute){}
+ constructor(private eventService:  EventsService,private route: ActivatedRoute){}
 
   ngOnInit(): void {
      this.route.params

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Getter
 @Entity
-@Table("TYPES_OF_FAULTS")
+@Table(name = "TYPES_OF_FAULTS")
 public class TypeOfFaultEntity extends SuperEntity {
 
     private String type;

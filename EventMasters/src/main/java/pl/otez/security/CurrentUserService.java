@@ -28,14 +28,14 @@ public class CurrentUserService implements UserDetailsService {
             final CurrentUser currentUser = new CurrentUser();
 
             currentUser.setUsername(client.getEmail().toString());
-            currentUser.setPassword(client.getPassword());
+            currentUser.setPassword(client.getPassword().toString());
         }
         final EmployeeEntity employee = employeeRepository.findEmployeeByEmail(username);
         if(employee != null){
             final CurrentUser currentUser = new CurrentUser();
 
             currentUser.setUsername(employee.getEmail().toString());
-            currentUser.setPassword(employee.getPassword());
+            currentUser.setPassword(employee.getPassword().toString());
 
             return currentUser;
         } else {

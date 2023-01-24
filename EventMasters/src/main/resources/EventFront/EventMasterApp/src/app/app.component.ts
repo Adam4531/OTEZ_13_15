@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventsService } from './events/EventsService';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'EventMasterApp';
+  constructor(private eventService: EventsService) {
+}
+
+  ngOnInit() {
+    // this.getReservations()
+
+  }
 }

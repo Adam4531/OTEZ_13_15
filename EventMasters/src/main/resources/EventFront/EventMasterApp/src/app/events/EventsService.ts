@@ -1,39 +1,47 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Injectable, Output } from '@angular/core';
 import { EventDto } from './event';
 import { environment } from 'src/environments/environment';
+import { map, Observable, Subject, tap } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ReservationsService {
-  private events: EventDto[] = [];
+@Injectable()
+export class EventsService {
+
   private apiServerUrl = environment.apiBaseUrl;
+
+ eventsChanged = new Subject<EventDto[]>();
+
+ private events: EventDto[] = [];
 
   constructor(private http: HttpClient) {
   }
 
-  setEvents(events: EventDto[]) {
+
+
+  async fetchEvents(): Promise<void>{
+    this.http.get<EventDto[]>(`${this.apiServerUrl}/events/`).subscribe((response: any) => {
+      this.setEvents(response)});
+  }
+
+
+  async setEvents(events: EventDto[]){
     this.events = events;
+    this.eventsChanged.next(this.events.slice());
   }
 
-  public fetchEvents(): Observable<EventDto[]> {
-    return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/`).pipe(
-      tap(events => {
-        this.setEvents(events);
-      })
-    )
-
-  }
 
   public getAll() {
+    this.eventsChanged.next(this.events.slice());
     return this.events.slice();
+
+    // return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/}`)
   }
 
-  getEvent(index: number) {
-    return this.events[index];
+  public getEvent(ID: number) {
+    return this.events[ID];
   }
+
+
 
 
 }

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import pl.otez.SuperEntity;
 import pl.otez.user.validation.EmailValidator;
+import pl.otez.user.validation.PasswordValidator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class ClientEntity extends SuperEntity {
 
     private String address;
 
-    private String password;
+    private PasswordValidator password;
 
     private LocalDate createdTime;
 
@@ -36,7 +37,7 @@ public class ClientEntity extends SuperEntity {
     private String nameOfCompany;
 
     @Builder
-    public ClientEntity(EmailValidator aEmail, String aFirstName, String aLastName, String aPhoneNumber, String aAddress, String aPassword, LocalDate aCreatedTime, String aNIP, String aNameOfCompany) {
+    public ClientEntity(EmailValidator aEmail, String aFirstName, String aLastName, String aPhoneNumber, String aAddress, PasswordValidator aPassword, LocalDate aCreatedTime, String aNIP, String aNameOfCompany) {
         email = aEmail;
         firstName = aFirstName;
         lastName = aLastName;

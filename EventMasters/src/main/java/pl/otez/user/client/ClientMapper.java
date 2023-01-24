@@ -18,8 +18,8 @@ public class ClientMapper {
                 .phoneNumber(aClientEntity.getPhoneNumber())
                 .address(aClientEntity.getAddress())
                 .createdTime(aClientEntity.getCreatedTime())
-                .password(aClientEntity.getPassword())
-                .NIP(aClientEntity.getPassword())
+                .password(aClientEntity.getPassword().toString())
+                .NIP(aClientEntity.getNIP())
                 .nameOfCompany(aClientEntity.getNameOfCompany())
                 .build();
     }

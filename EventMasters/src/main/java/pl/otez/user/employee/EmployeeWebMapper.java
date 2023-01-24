@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import pl.otez.user.employee.dto.EmployeeRequestDto;
 import pl.otez.user.employee.position.PositionRepository;
 import pl.otez.user.validation.EmailValidator;
+import pl.otez.user.validation.PasswordValidator;
 
 @Component
 @RequiredArgsConstructor
@@ -17,7 +18,7 @@ public class EmployeeWebMapper { //TODO fill EmployeeMapper with map methods
                 .aEmail(new EmailValidator(aEmployee.email()))
                 .aFirstName(aEmployee.firstName())
                 .aLastName(aEmployee.lastName())
-                .aPassword(aEmployee.password())
+                .aPassword(new PasswordValidator(aEmployee.password()))
                 .aPosition(positionRepository.findPositionEntityById(aEmployee.positionId()))
                 .build();
     }

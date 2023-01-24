@@ -20,9 +20,9 @@ public class TicketController {
         ticketService = aTicketService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public List<TicketDto> getClients(){
+    public List<TicketDto> getTickets(){
         return ticketService.getAllTickets();
     }
 

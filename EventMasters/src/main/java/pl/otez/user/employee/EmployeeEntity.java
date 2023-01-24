@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import pl.otez.SuperEntity;
 import pl.otez.user.employee.position.PositionEntity;
 import pl.otez.user.validation.EmailValidator;
+import pl.otez.user.validation.PasswordValidator;
 
 import javax.persistence.*;
 
@@ -26,10 +27,10 @@ public class EmployeeEntity extends SuperEntity {
     @Column(unique = true)
     private EmailValidator email;
 
-    private String password;
+    private PasswordValidator password;
 
     @Builder
-    public EmployeeEntity(String aFirstName, String aLastName, PositionEntity aPosition, EmailValidator aEmail, String aPassword) {
+    public EmployeeEntity(String aFirstName, String aLastName, PositionEntity aPosition, EmailValidator aEmail, PasswordValidator aPassword) {
         firstName = aFirstName;
         lastName = aLastName;
         position = aPosition;

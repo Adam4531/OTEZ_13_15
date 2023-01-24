@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Event } from '../../../shared/event.model';
+import { EventDto } from '../../event';
 
 @Component({
   selector: 'app-event-item',
@@ -7,6 +7,6 @@ import { Event } from '../../../shared/event.model';
   styleUrls: ['./event-item.component.css']
 })
 export class EventItemComponent {
-  @Input() event: Event;
+  @Input() event: EventDto;
   @Input() index: number;
 }

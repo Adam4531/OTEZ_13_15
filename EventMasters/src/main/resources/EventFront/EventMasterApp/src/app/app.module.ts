@@ -28,7 +28,6 @@ import { MyTicketsListComponent } from './my-tickets/my-tickets-list/my-tickets-
 import { MyTicketItemComponent } from './my-tickets/my-tickets-list/my-ticket-item/my-ticket-item.component';
 import { TicketService } from './cart/ticket.service';
 import { MyTicketDetaiComponent } from './my-tickets/my-ticket-detai/my-ticket-detai.component';
-import { EventService } from './shared/event.service';
 import { HttpClientModule } from '@angular/common/http';
 import { EventsService } from './events/EventsService';
 

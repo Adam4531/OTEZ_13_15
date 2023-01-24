@@ -57,6 +57,7 @@ import { EventsService } from './events/EventsService';
     MyTicketsListComponent,
     MyTicketItemComponent,
     MyTicketDetaiComponent,
+    SellComponent
   ],
   imports: [
     BrowserModule,

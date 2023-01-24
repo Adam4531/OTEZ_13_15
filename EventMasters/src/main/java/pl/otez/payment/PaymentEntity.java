@@ -2,6 +2,7 @@ package pl.otez.payment;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pl.otez.SuperEntity;
 import pl.otez.user.client.ClientEntity;
 
 import javax.persistence.*;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 @Getter
 @Entity
 @Table(name = "PAYMENTS")
-public class PaymentEntity {
+public class PaymentEntity extends SuperEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

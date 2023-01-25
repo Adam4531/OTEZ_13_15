@@ -15,10 +15,6 @@ import java.time.LocalDate;
 @Table(name = "PAYMENTS")
 public class PaymentEntity extends SuperEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private BigDecimal price;
 
     @OneToOne(fetch = FetchType.LAZY)

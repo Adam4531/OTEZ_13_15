@@ -12,7 +12,7 @@ public class PaymentMapper {
         return PaymentDto.builder()
                 .id(aPayment.getId())
                 .price(aPayment.getPrice())
-                .client_id(aPayment.getClient().getId())
+                .clientId(aPayment.getClient().getId())
                 .dateOfPayment(aPayment.getDateOfPayment())
                 .build();
     }

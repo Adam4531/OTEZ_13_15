@@ -18,19 +18,29 @@ import javax.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class AuthentificationConfiguration extends WebSecurityConfigurerAdapter { //FIXME find a replacement for deprycated class
     private final CurrentUserService currentUserService;
-    private final PasswordEncoder passwordEncoder;
+//    private final PasswordEncoder passwordEncoder;
     private final SessionFilter sessionFilter;
 
     @Lazy
-    public AuthentificationConfiguration(CurrentUserService aCurrentUserService, PasswordEncoder aPasswordEncoder, SessionFilter aSessionFilter) {
+    AuthentificationConfiguration(CurrentUserService aCurrentUserService, SessionFilter aSessionFilter) {
         currentUserService = aCurrentUserService;
-        passwordEncoder = aPasswordEncoder;
         sessionFilter = aSessionFilter;
     }
 
+
+    @Lazy
+//    public AuthentificationConfiguration(CurrentUserService aCurrentUserService, PasswordEncoder aPasswordEncoder, SessionFilter aSessionFilter) {
+//        currentUserService = aCurrentUserService;
+//        passwordEncoder = aPasswordEncoder;
+//        sessionFilter = aSessionFilter;
+//    }
+
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(currentUserService).passwordEncoder(passwordEncoder);
+        auth.userDetailsService(currentUserService);
+//                .passwordEncoder(passwordEncoder);
     }
 
     @Override
@@ -70,8 +80,8 @@ public class AuthentificationConfiguration extends WebSecurityConfigurerAdapter 
         return super.authenticationManagerBean();
     }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+//    @Bean
+//    public BCryptPasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
 }

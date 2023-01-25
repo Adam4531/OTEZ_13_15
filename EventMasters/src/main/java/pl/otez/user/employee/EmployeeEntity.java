@@ -27,6 +27,7 @@ public class EmployeeEntity extends SuperEntity {
     @Column(unique = true)
     private EmailValidator email;
 
+    @Embedded
     private PasswordValidator password;
 
     @Builder

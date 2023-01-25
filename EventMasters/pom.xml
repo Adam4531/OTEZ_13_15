@@ -184,6 +184,8 @@
 						<pattern>pl.otez.ticket.dto.*</pattern>
 						<pattern>pl.otez.user.client.dto.*</pattern>
 						<pattern>pl.otez.user.employee.dto.*</pattern>
+						<pattern>pl.otez.technicalfault.dto.*</pattern>
+						<pattern>pl.otez.intermediarycompany.dto.*</pattern>
 					</classPatterns>
 					<outputKind>module</outputKind>
 					<mapEnum>asEnum</mapEnum>

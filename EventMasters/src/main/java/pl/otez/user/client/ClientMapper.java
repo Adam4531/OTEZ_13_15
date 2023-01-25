@@ -12,15 +12,11 @@ public class ClientMapper {
 
     public ClientResponseDto fromClientEntityToClientResponseDto(ClientEntity aClientEntity){
         return ClientResponseDto.builder()
+                .id(aClientEntity.getId())
                 .email(aClientEntity.getEmail().toString())
                 .firstName(aClientEntity.getFirstName())
                 .lastName(aClientEntity.getLastName())
-                .phoneNumber(aClientEntity.getPhoneNumber())
-                .address(aClientEntity.getAddress())
-                .createdTime(aClientEntity.getCreatedTime())
                 .password(aClientEntity.getPassword().toString())
-                .NIP(aClientEntity.getNIP())
-                .nameOfCompany(aClientEntity.getNameOfCompany())
                 .build();
     }
 

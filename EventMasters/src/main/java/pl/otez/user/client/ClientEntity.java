@@ -28,6 +28,7 @@ public class ClientEntity extends SuperEntity {
 
     private String address;
 
+    @Embedded
     private PasswordValidator password;
 
     private LocalDate createdTime;

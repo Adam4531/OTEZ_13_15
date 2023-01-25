@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.otez.interfaces.UserValidator;
 import pl.otez.user.ErrorsListDto;
 import pl.otez.user.employee.dto.EmployeeRequestDto;
+import pl.otez.user.validation.EmailValidator;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public class EmployeeRegistrationService implements UserValidator {
     }
 
     public boolean isEmailUnique(String email){
-        final EmployeeEntity employee = employeeRepository.findEmployeeByEmail(email);
+        final EmployeeEntity employee = employeeRepository.findEmployeeByEmail(new EmailValidator(email));
         return employee == null;
     }
 }

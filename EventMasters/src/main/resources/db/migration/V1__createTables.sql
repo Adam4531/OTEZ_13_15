@@ -7,15 +7,15 @@ AS BIGINT
 INCREMENT BY 1
 START WITH 10000;
 
-CREATE TABLE IF NOT EXISTS public.Clients (
+CREATE TABLE IF NOT EXISTS public.Clients ( --Add rest of fields to register form and then add here NOT NULL to phone_number, created_time
   ID BIGINT NOT NULL DEFAULT nextval('id_seq') PRIMARY KEY,
   email VARCHAR(45) NOT NULL UNIQUE,
   first_name VARCHAR(45) NOT NULL,
   last_name VARCHAR(45) NOT NULL,
-  phone_number VARCHAR(9) NOT NULL,
+  phone_number VARCHAR(9),
   address VARCHAR(45),
-  password VARCHAR(50) NOT NULL,
-  created_time DATE NOT NULL,
+  password VARCHAR(50) NOT NULL ,
+  created_time DATE,
   NIP VARCHAR(10),
   name_of_company VARCHAR(50));
 
@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS public.Types_Of_Events (
 CREATE TABLE IF NOT EXISTS public.Payments (
   ID BIGINT NOT NULL DEFAULT nextval('id_seq') PRIMARY KEY,
   price DECIMAL(7,2) NOT NULL,
-  client_id BIGINT NOT NULL,
-  date_of_payment DATE NOT NULL,
+  client_id BIGINT,
+  date_of_payment DATE,
   CONSTRAINT client_id_fkey FOREIGN KEY (client_id) REFERENCES Clients(ID));
 
 CREATE TABLE IF NOT EXISTS public.Positions (

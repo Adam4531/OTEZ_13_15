@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.otez.interfaces.UserValidator;
 import pl.otez.user.ErrorsListDto;
 import pl.otez.user.client.dto.ClientRequestDto;
+import pl.otez.user.validation.EmailValidator;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public class ClientRegistrationService implements UserValidator {
     }
 
     public boolean isEmailUnique(String email){
-        final ClientEntity client = clientRepository.findClientByEmail(email);
+        final ClientEntity client = clientRepository.findClientEntityByEmail(new EmailValidator(email));
         return client == null;
     }
 

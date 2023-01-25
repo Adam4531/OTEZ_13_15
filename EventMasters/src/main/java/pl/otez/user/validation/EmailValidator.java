@@ -17,6 +17,8 @@ public class EmailValidator implements Validator {
         + "?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e"
         + "-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
 
+
+
     @Column
     private String email;
 
@@ -24,13 +26,19 @@ public class EmailValidator implements Validator {
         if(Objects.isNull(aEmail)){
             throw new IllegalArgumentException("Email can not be null!");
         }
-        if(!isValidLength(email, 5, 45)){
+        if(!isValidLength(aEmail, 5, 45)){
             throw new IllegalArgumentException("Email must be between 5 to 45 characters length!");
         }
-        if(!containsValidCharacters(email, EMAIL_PATTERN)){
+        if(!containsValidCharacters(aEmail, EMAIL_PATTERN)){
             throw new IllegalArgumentException("Email may contain only letters, digits, and '@' '.' signs!");
         }
         this.email = aEmail;
+    }
+
+    @Override
+    public boolean containsValidCharacters(String stringToCheck, String pattern) {
+        stringToCheck = stringToCheck.toLowerCase();
+        return Validator.super.containsValidCharacters(stringToCheck, pattern);
     }
 
     @Override

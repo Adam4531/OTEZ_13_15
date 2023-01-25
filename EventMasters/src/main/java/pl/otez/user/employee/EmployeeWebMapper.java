@@ -9,7 +9,7 @@ import pl.otez.user.validation.PasswordValidator;
 
 @Component
 @RequiredArgsConstructor
-public class EmployeeWebMapper { //TODO fill EmployeeMapper with map methods
+public class EmployeeWebMapper {
     private final PositionRepository positionRepository;
 
 

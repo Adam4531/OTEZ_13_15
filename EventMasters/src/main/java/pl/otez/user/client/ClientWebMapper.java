@@ -11,13 +11,8 @@ public class ClientWebMapper {
         return ClientEntity.builder()
                 .aFirstName(aClientRequestDto.firstName())
                 .aLastName(aClientRequestDto.lastName())
-                .aAddress(aClientRequestDto.address())
-                .aCreatedTime(aClientRequestDto.createdTime())
                 .aEmail(new EmailValidator(aClientRequestDto.email()))
-                .aNameOfCompany(aClientRequestDto.nameOfCompany())
-                .aNIP(aClientRequestDto.NIP())
                 .aPassword(new PasswordValidator(aClientRequestDto.password()))
-                .aPhoneNumber(aClientRequestDto.phoneNumber())
                 .build();
     }
 }

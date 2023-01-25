@@ -1,5 +1,7 @@
 package pl.otez.interfaces;
 
+import java.util.Locale;
+
 public interface Validator {
 
     default boolean containsValidCharacters(String stringToCheck, String pattern){

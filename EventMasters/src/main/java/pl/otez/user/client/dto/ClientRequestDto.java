@@ -4,9 +4,7 @@ import lombok.Builder;
 
 import java.time.LocalDate;
 
-public record ClientRequestDto(String email, String firstName, String lastName, String phoneNumber,
-                               String address, LocalDate createdTime, String password, String NIP,
-                               String nameOfCompany) {
+public record ClientRequestDto(String email, String firstName, String lastName, String password) {
 
     @Builder
     public ClientRequestDto { }

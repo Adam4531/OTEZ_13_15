@@ -24,7 +24,7 @@ public class ClientController {
         clientEditService = aClientEditService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
     public List<ClientResponseDto> getClients(){
         return clientService.getAllClients();

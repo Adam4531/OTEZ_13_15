@@ -8,8 +8,8 @@
       <li class ="dropdown" appDropdown *ngIf="isAuth">
           <a class = "dropdown-toggle" role = "button" style="color: black;">Menu <span class = "caret"></span></a>
           <ul class = "dropdown-menu">
-              <li><a href="my_tickets">Moje bilety</a></li>
-              <li><a href="my_events">Moje imprezy</a></li>
+              <li><a routerLink="my_tickets">Moje bilety</a></li>
+              <li><a routerLink="my_events">Moje imprezy</a></li>
               <li><a (click)="onLogout()">Wyloguj</a></li>
 
           </ul>

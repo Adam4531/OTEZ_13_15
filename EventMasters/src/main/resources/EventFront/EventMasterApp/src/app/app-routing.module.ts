@@ -11,6 +11,7 @@ import { MyEventsComponent } from './my-events/my-events.component';
 import { MyTicketDetaiComponent } from './my-tickets/my-ticket-detai/my-ticket-detai.component';
 import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 import { OrganizeComponent } from './organize/organize.component';
+import { PaymentsComponent } from './payments/payments.component';
 import { SellComponent } from './sell/sell.component';
 import { TechnicalFaultComponent } from './technical-fault/technical-fault.component';
 
@@ -18,7 +19,8 @@ import { TechnicalFaultComponent } from './technical-fault/technical-fault.compo
 const routes: Routes = [
   { path: '', redirectTo: 'events', pathMatch: 'full' },
   { path: 'report', component: TechnicalFaultComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent},
+  {path: 'payment', component: PaymentsComponent},
   {path: 'events', component: EventsComponent, children: [
     {path: '', component: EventStartComponent},
     {path: ':id', component: EventDetailComponent},

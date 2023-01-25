@@ -18,4 +18,9 @@ export class CartPriceComponent {
   ngOnInit() {
     this.tickets = this.ticketService.ticketsbyUser;
     }
+
+   onSubmit(){
+    //tutaj dać odpowiedniego post z payment
+      console.log(this.tickets)
+    }
 }

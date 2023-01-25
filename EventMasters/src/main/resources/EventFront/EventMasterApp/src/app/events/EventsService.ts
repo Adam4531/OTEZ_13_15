@@ -31,8 +31,9 @@ export class EventsService {
 
 
   public getAll() {
-    this.eventsChanged.next(this.events.slice());
-    return this.events.slice();
+    return this.eventsChanged.asObservable();
+    // this.eventsChanged.next(this.events.slice());
+    // return this.events.slice();
 
     // return this.http.get<EventDto[]>(`${this.apiServerUrl}/events/}`)
   }
@@ -41,6 +42,9 @@ export class EventsService {
     return this.events[ID];
   }
 
+  get getEventToTech(): Observable<EventDto>{
+    return this.http.get<EventDto>(`${this.apiServerUrl}/events/`)
+}
 
 
 

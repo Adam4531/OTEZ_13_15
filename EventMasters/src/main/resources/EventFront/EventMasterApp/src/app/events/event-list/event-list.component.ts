@@ -5,6 +5,7 @@ import { EventDto } from '../event';
 import { HttpClient } from '@angular/common/http';
 import { __await } from 'tslib';
 import { async } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-event-list',
@@ -12,7 +13,8 @@ import { async } from '@angular/core/testing';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent {
-  public events: EventDto[] = [];
+  // public events: EventDto[] = [];
+  events$: Observable<EventDto[]>
   constructor(private eventService: EventsService,
     private router: Router,
     private route: ActivatedRoute) {
@@ -21,13 +23,12 @@ export class EventListComponent {
 
 
 async ngOnInit() {
-  var that = this;
-  // this.getReservations()
   this.eventService.fetchEvents()
-  this
-  setTimeout(function(){
-    that.events = that.eventService.getAll();
-  },200);
+  this.events$ = this.eventService.getAll();
+
+
+  // that.events = that.eventService.getAll();
+
 
 
 }

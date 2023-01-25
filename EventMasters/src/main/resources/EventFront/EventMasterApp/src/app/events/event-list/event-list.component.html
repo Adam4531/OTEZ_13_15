@@ -3,6 +3,7 @@
   </div>
 </div>
 <hr>
+<div *ngIf="events$ | async as events">
 <div class="row">
   <div class="col-xs-12">
     <app-event-item
@@ -10,4 +11,5 @@
       [event]="eventEl"
       [index]="i"></app-event-item>
   </div>
+</div>
 </div>

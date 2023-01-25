@@ -44,7 +44,7 @@ public class PaymentController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<PaymentDto> deletePayment(Long id){
+    public ResponseEntity<PaymentDto> deletePayment(@PathVariable Long id){
         paymentService.deletePaymentById(id);
         final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("HEADER", "Payment with id:" + id + " has been successfully deleted");

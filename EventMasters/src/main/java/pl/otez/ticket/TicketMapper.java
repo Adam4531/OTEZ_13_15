@@ -12,7 +12,7 @@ public class TicketMapper {
         return TicketDto.builder()
                 .client(aTicketEntity.getClient())
                 .pricePerUnit(aTicketEntity.getPricePerUnit().getPricePerUnit())
-                .event(aTicketEntity.getEvent())
+                .eventId(aTicketEntity.getEvent().getId())
                 .build();
     }
     public List<TicketDto> fromTicketEntityListToTicketDto(List<TicketEntity> aTicketEntity){

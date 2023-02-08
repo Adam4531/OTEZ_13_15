@@ -28,13 +28,13 @@ public class PasswordValidator implements Validator {
         if(!containsValidCharacters(aPassword,ENGLISH_LETTERS_WITH_NUMBERS_AND_SPECIAL_CHARACTERS)){
             throw new IllegalStateException("Password must contain only english letters, numbers and special characters!");
         }
-//        aPassword = encryptPassword(aPassword);
+        aPassword = encryptPassword(aPassword);
         this.password = aPassword;
     }
 
-//    private String encryptPassword(String aPassword){
-//        return passwordEncoder.encode(aPassword);
-//    }
+    private String encryptPassword(String aPassword){
+        return passwordEncoder.encode(aPassword);
+    }
 
     public String toString() {
         return password;

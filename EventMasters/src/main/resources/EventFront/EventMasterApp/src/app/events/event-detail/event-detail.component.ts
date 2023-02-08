@@ -22,4 +22,8 @@ export class EventDetailComponent implements OnInit{
       }
     );
   }
+
+  add(){
+    console.log(this.event.id)
+  }
 }

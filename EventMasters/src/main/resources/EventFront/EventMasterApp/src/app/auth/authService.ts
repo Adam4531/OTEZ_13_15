@@ -18,6 +18,8 @@ export class AuthSService {
   sessionId: any = "";
   errorsListDto: ErrorsListDto = new ErrorsListDto();
 
+  isEmployee = false;
+  isLogin = false;
 
   constructor(private router: Router, private http: HttpClient) { }
 

@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS public.Clients ( --Add rest of fields to register for
   last_name VARCHAR(45) NOT NULL,
   phone_number VARCHAR(9),
   address VARCHAR(45),
-  password VARCHAR(50) NOT NULL ,
+  password VARCHAR(100) NOT NULL ,
   created_time DATE,
   NIP VARCHAR(10),
   name_of_company VARCHAR(50));
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS public.Employees (
   last_name VARCHAR(45) NOT NULL,
   position_id BIGINT NOT NULL,
   email VARCHAR(45) NOT NULL,
-  password VARCHAR(45) NOT NULL,
+  password VARCHAR(100) NOT NULL,
   CONSTRAINT employees_id_pkey PRIMARY KEY (ID),
   CONSTRAINT position_id_fkey FOREIGN KEY (position_id) REFERENCES Positions(ID));
 

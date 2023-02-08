@@ -27,11 +27,11 @@
     <div class="container-fluid">
       <div class ="collapse navbar-collapse" style="text-align: center;">
         <ul class="nav navbar-nav">
-          <li routerLinkActive="active"><a routerLink="/events" >Imprezy</a></li>
-          <li routerLinkActive="active"><a routerLink="/organize" >Organizuj</a></li>
-          <li routerLinkActive="active"><a routerLink="/sell" >Sprzedaj</a></li>
-          <li routerLinkActive="active"><a routerLink="/company" >Zgłoś firmę</a></li>
-          <li routerLinkActive="active"><a routerLink="/report" >Zgłoś usterkę</a></li>
+          <li routerLinkActive="active" ><a  routerLink="/events" >Imprezy</a></li>
+          <li routerLinkActive="active"*ngIf="isAuth"><a routerLink="/organize" >Organizuj</a></li>
+          <li routerLinkActive="active"*ngIf="isAuth"><a routerLink="/sell" >Sprzedaj</a></li>
+          <li routerLinkActive="active" *ngIf="isAuth"><a routerLink="/company" >Zgłoś firmę</a></li>
+          <li routerLinkActive="active" *ngIf="isEmployee"><a routerLink="/report" >Zgłoś usterkę</a></li>
         </ul>
       </div>
 

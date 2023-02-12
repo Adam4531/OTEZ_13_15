@@ -30,6 +30,8 @@ public class CurrentUserService implements UserDetailsService {
 
             currentUser.setUsername(client.getEmail().toString());
             currentUser.setPassword(client.getPassword().toString());
+
+            return currentUser;
         }
         final EmployeeEntity employee = employeeRepository.findEmployeeByEmail(new EmailValidator(username));
         if(employee != null){

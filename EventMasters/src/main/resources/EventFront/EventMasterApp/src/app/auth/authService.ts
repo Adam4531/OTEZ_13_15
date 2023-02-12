@@ -45,7 +45,7 @@ export class AuthSService {
           this.sessionId = res.sessionId;
           sessionStorage.setItem('token', this.sessionId);
           this.router.navigate(['localhost:4200/']);
-          localStorage.setItem('email', this.model.email);
+          localStorage.setItem('email', email);
         } else {
           // res.errorsListDto.array.forEach((element: any) => {
             //   this.messageService.add({life:10000, severity:'error', summary: 'Logowanie', detail:element})
@@ -67,7 +67,7 @@ export class AuthSService {
           this.sessionId = res.sessionId;
           sessionStorage.setItem('token', this.sessionId);
           this.router.navigate(['localhost:4200/']);
-          localStorage.setItem('email', this.model.email);
+          localStorage.setItem('email', email);
         } else {
           // res.errorsListDto.array.forEach((element: any) => {
           //   this.messageService.add({life:10000, severity:'error', summary: 'Logowanie', detail:element})

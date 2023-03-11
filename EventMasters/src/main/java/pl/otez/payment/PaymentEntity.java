@@ -22,4 +22,5 @@ public class PaymentEntity extends SuperEntity {
     private ClientEntity client;
 
     private LocalDate dateOfPayment;
+
 }

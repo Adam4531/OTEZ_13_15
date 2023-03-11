@@ -35,9 +35,16 @@ public class TicketService {
         return ticketMapper.fromTicketEntityToTicketDto(ticket);
     }
 
+
     public TicketDto updateTicketPricePerUnit(Long id, BigDecimal pricePerUnit){
         TicketEntity ticket = getTicket(id);
         ticket.changePricePerUnit(pricePerUnit);
+        ticketRepository.save(ticket);
+        return ticketMapper.fromTicketEntityToTicketDto(ticket);
+    }
+
+    TicketDto updateTicket(Long aId, TicketEntity aTicketEntity) {
+        TicketEntity ticket = getTicket(aId);
         ticketRepository.save(ticket);
         return ticketMapper.fromTicketEntityToTicketDto(ticket);
     }
@@ -48,4 +55,8 @@ public class TicketService {
         return "Ticket with id:" + id + " has been succesfully deleted!";
     }
 
+    public TicketDto addTicket(TicketEntity aTicketEntity) {
+        ticketRepository.save(aTicketEntity);
+        return ticketMapper.fromTicketEntityToTicketDto(aTicketEntity);
+    }
 }

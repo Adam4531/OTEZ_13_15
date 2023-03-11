@@ -1,5 +1,7 @@
 package pl.otez.event;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import pl.otez.event.enums.StatusEnum;
@@ -23,17 +25,17 @@ public class EventEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "type_of_event_id")
+    @JoinColumn(name = "type_of_event_id", nullable = false)
     private TypeOfEventEntity TypeOfEvent;
 
     private BigDecimal price;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "payment_id")
+    @JoinColumn(name = "payment_id", nullable = false)
     private PaymentEntity payment;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "head_employee_of_event_id")
+    @JoinColumn(name = "head_employee_of_event_id", nullable = false)
     private EmployeeEntity headEmployee;
 
     @Column(name = "date_start_of_event")
@@ -46,7 +48,7 @@ public class EventEntity {
     private StatusEnum status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "client_id", nullable = false)
     private ClientEntity client;
 
 }
